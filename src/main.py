@@ -50,6 +50,7 @@ intents = discord.Intents(messages=True, guilds=True,
 
 bot = commands.Bot(
     command_prefix=command_prefix,
+    case_insensitive=True,
     intents=intents,
     command_not_found="Heck! That command doesn't exist!!",
     description="I am 100% authentic object:human",
