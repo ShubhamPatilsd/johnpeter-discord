@@ -1,15 +1,16 @@
 import asyncio
+import json
+from math import ceil
 
 import discord
-from discord.ext import commands, tasks
-import json
 import requests
-from math import ceil
+from discord.ext import commands, tasks
+
 from utils import checks
 from utils.badges import grant, choose_cult
 from utils.commands import only_random
 from utils.confirmation import confirm
-from utils.paginated_send import paginated_send_multiline, paginate_reaction
+from utils.paginated_send import paginate_reaction
 
 BADGES_QUERY = """
 {
@@ -21,6 +22,7 @@ BADGES_QUERY = """
         emoji
         description
         earnCriteria
+        grantPermissionOverrideIDs
       }
     }
   }
